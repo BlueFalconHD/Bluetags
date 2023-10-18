@@ -14,15 +14,15 @@ public class BluetagsAPI {
         this.playerDataManager = playerDataManager;
     }
 
-    private void syncData(UUID uuid, PlayerData playerData) {
+    private static void syncData(UUID uuid, PlayerData playerData) {
         Bluetags.getPluginInstance().getPlayerDataManager().setPlayerData(uuid, playerData);
     }
 
-    public PlayerData getPlayerData(UUID uuid) {
+    public static PlayerData getPlayerData(UUID uuid) {
         return Bluetags.getPluginInstance().getPlayerDataManager().getPlayerData(uuid);
     }
 
-    public boolean addPlayerTag(UUID uuid, String tag) {
+    public static boolean addPlayerTag(UUID uuid, String tag) {
         PlayerData playerData = getPlayerData(uuid);
         log.info("Adding tag " + tag + " to player with UUID " + uuid.toString());
         if (playerData != null) {
@@ -38,7 +38,7 @@ public class BluetagsAPI {
         return false;
     }
 
-    public boolean removePlayerTag(UUID uuid, String tag) {
+    public static boolean removePlayerTag(UUID uuid, String tag) {
         PlayerData playerData = getPlayerData(uuid);
         log.info("Removing tag " + tag + " from player with UUID " + uuid.toString());
         if (playerData != null) {
@@ -54,7 +54,7 @@ public class BluetagsAPI {
         return false;
     }
 
-    public boolean hasPlayerTag(UUID uuid, String tag) {
+    public static boolean hasPlayerTag(UUID uuid, String tag) {
         PlayerData playerData = getPlayerData(uuid);
         return playerData != null && playerData.hasTag(tag);
     }
@@ -63,7 +63,7 @@ public class BluetagsAPI {
         Bluetags.getPluginInstance().getPlayerDataManager().savePlayerData();
     }
 
-    public void loadPlayerData() {
+    public static void loadPlayerData() {
         Bluetags.getPluginInstance().getPlayerDataManager().loadPlayerData();
     }
 }

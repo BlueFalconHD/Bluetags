@@ -6,14 +6,14 @@ import revxrsal.commands.bukkit.BukkitCommandHandler;
 
 public final class Bluetags extends JavaPlugin {
 
-    public Bluetags instance;
+    public static Bluetags instance;
     public final PlayerDataManager playerDataManager = new PlayerDataManager(this);
     public final BluetagsAPI bluetagsAPI = new BluetagsAPI(playerDataManager);
 
     private final Log log = new Log("Bluetags");
 
 
-    public Bluetags getPluginInstance() {
+    public static Bluetags getPluginInstance() {
         return instance;
     }
 
@@ -31,7 +31,7 @@ public final class Bluetags extends JavaPlugin {
         }
 
         BukkitCommandHandler handler = BukkitCommandHandler.create(instance);
-        handler.register(new BluetagsCommand(bluetagsAPI));
+        handler.register(new BluetagsCommand());
 
         handler.getBrigadier().ifPresent(brigadier -> {
             log.info("Brigadier is present!");

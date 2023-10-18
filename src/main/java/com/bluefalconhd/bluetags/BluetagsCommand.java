@@ -53,11 +53,11 @@ public class BluetagsCommand {
 
     // create a function to use Chat.format on a given translation key
 
-    private String formatTranslation(String key) {
+    private static String formatTranslation(String key) {
         return formatTranslation(key, null, null);
     }
 
-    private String formatTranslation(String key, String tag, String player) {
+    private static String formatTranslation(String key, String tag, String player) {
         // create a hashmap to store the tag and player, and add each one if neither is null
         Map<String, String> replacements = new HashMap<>();
         if (tag != null) {
@@ -72,10 +72,10 @@ public class BluetagsCommand {
     }
 
     // define the bluetags instance
-    private final Bluetags bluetags = Bluetags.getPluginInstance();
+    private static final Bluetags bluetags = Bluetags.getPluginInstance();
 
     @Command("bluetags help")
-    private void sendHelpMessage(Player sender) {
+    private static void sendHelpMessage(Player sender) {
         String[] messages = {
                 "&9Bluetags&r v1.0.0 by BlueFalconHD &c<3&r",
                 "&b/bluetags info&r - Show plugin info",
@@ -93,24 +93,24 @@ public class BluetagsCommand {
 
 
     @Subcommand("info")
-    public void info(Player sender) {
+    public static void info(Player sender) {
         sender.sendMessage(formatTranslation("info"));
     }
 
     @Subcommand("reload")
-    public void reload() {
+    public static void reload() {
         // reload the plugin
         BluetagsAPI.loadPlayerData();
     }
 
     @Subcommand("save")
-    public void save() {
+    public static void save() {
         // save the player data
         bluetags.getPlayerDataManager().savePlayerData();
     }
 
     @Subcommand("add")
-    public void add(
+    public static void add(
             Player sender,
             String tag,
             EntitySelector<Player> targets
@@ -134,7 +134,7 @@ public class BluetagsCommand {
     }
 
     @Subcommand("remove")
-    public void remove(
+    public static void remove(
             Player sender,
             String tag,
             EntitySelector<Player> targets
@@ -159,7 +159,7 @@ public class BluetagsCommand {
     }
 
     @Subcommand("toggle")
-    public void toggle(
+    public static void toggle(
             Player sender,
             String tag,
             EntitySelector<Player> targets
@@ -178,7 +178,7 @@ public class BluetagsCommand {
     }
 
     @Subcommand("list")
-    public void list(
+    public static void list(
             Player sender,
             EntitySelector<Player> targets
     ) {

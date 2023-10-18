@@ -7,7 +7,7 @@ import java.util.UUID;
 public class PlayerData {
 
     private final UUID uuid;
-    private final List<String> tags = new ArrayList<>();
+    private final ArrayList<String> tags = new ArrayList<>();
 
     public PlayerData(UUID uuid) {
         this.uuid = uuid;
@@ -17,7 +17,7 @@ public class PlayerData {
         return uuid;
     }
 
-    public List<String> getTags() {
+    public ArrayList<String> getTags() {
         return tags;
     }
 

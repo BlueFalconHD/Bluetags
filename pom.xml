@@ -52,7 +52,7 @@
                     <relocations>
                         <relocation>
                             <pattern>com.github.stefvanschie.inventoryframework</pattern>
-                            <shadedPattern>[YOUR PACKAGE].inventoryframework</shadedPattern>
+                            <shadedPattern>Bluetags.inventoryframework</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

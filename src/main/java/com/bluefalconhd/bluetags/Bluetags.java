@@ -8,7 +8,7 @@ public final class Bluetags extends JavaPlugin {
 
     public static Bluetags instance;
     public final PlayerDataManager playerDataManager = new PlayerDataManager(this);
-    public final BluetagsAPI bluetagsAPI = new BluetagsAPI(playerDataManager);
+    public final BluetagsAPI bluetagsAPI = new BluetagsAPI();
 
     private final Log log = new Log("Bluetags");
 

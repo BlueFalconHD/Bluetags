@@ -8,13 +8,8 @@ public class BluetagsAPI {
 
 
     private static final Log log = new Log("Bluetags.API");
-    private final PlayerDataManager playerDataManager;
 
-    public BluetagsAPI(PlayerDataManager playerDataManager) {
-        this.playerDataManager = playerDataManager;
-    }
-
-    private static void syncData(UUID uuid, PlayerData playerData) {
+    public static void syncData(UUID uuid, PlayerData playerData) {
         Bluetags.getPluginInstance().getPlayerDataManager().setPlayerData(uuid, playerData);
     }
 

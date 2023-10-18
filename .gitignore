@@ -1,3 +1,7 @@
 # java gitignore
 .idea
-target
+*.iml
+
+# folder target and all items inside
+target/
+/target/

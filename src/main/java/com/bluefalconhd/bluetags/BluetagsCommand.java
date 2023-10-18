@@ -189,4 +189,9 @@ public class BluetagsCommand {
             sender.sendMessage(Chat.Format(msg));
         }
     }
+
+    @Subcommand("gui")
+    public static void gui(Player sender) {
+        BluetagsGUI.OpenGUI(sender);
+    }
 }
